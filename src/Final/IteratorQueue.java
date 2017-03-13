@@ -2,6 +2,12 @@ package Final;
 import Ds.NoNextElementException;
 import Ds.QueueInterface;
 
+/**
+ * Takes in an array copy of a Queue and iterates
+ * @author Jason Wu
+ *
+ * @param <T>
+ */
 public class IteratorQueue<T> implements Iterator<T> {
 	private T[] arr;
 	private int curr;

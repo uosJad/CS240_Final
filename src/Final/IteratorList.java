@@ -2,6 +2,12 @@ package Final;
 import Ds.ListInterface;
 import Ds.NoNextElementException;
 
+/**
+ * Takes in an array copy of a List and iterates
+ * @author Jason Wu
+ *
+ * @param <T>
+ */
 public class IteratorList<T> implements Iterator<T> {
 	private T[] arr;
 	private int curr;

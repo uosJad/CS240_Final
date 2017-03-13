@@ -2,12 +2,23 @@ package Final;
 import Ds.ListInterface;
 import Ds.ListNode;
 
+/**
+ * Dictionary, stores keys with multiple values
+ * @author Jason Wu
+ *
+ * @param <K> Key Type
+ * @param <V> Value Type
+ */
 public class Dictionary<K, V> implements DictionaryInterface<K, V>{
 
 	private ListNode<NodeKV<K, V>> nodeKVList;
 	private ListNode<NodeKV<V, K>> valueList; // key becomes the value, value becomes keys referencing it
 	
-	
+	/**
+	 * Used both ways as keys to values and values to keys
+	 * @param <Key> 
+	 * @param <Value>
+	 */
 	private class NodeKV<Key, Value>{ // node that points to a List of Values
 		private Key key;
 		private ListInterface<Value> vals;
@@ -24,7 +35,6 @@ public class Dictionary<K, V> implements DictionaryInterface<K, V>{
 		public void removeValue(Value v){
 			vals.remove(vals.indexOf(v));
 		}
-		
 	}
 	
 	public Dictionary(){

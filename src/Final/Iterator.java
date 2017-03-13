@@ -1,5 +1,11 @@
 package Final;
 
+/**
+ * Iterates through datas ctuctures
+ * @author Jason Wu
+ *
+ * @param <T> type of values iterating through
+ */
 public interface Iterator<T> {
 
 	/**
