@@ -36,6 +36,43 @@ public class TestClass {
 			System.out.println(e);
 		}
 		
+		StackInterface<Integer> s = new StackVector<Integer>();
+		QueueInterface<Integer> q = new QueueNode<Integer>();
+		ListInterface<Integer> l = new ListNode<Integer>();
+		
+		s.push(1);
+		s.push(2);
+		q.enqueue(3);
+		q.enqueue(4);
+		l.add(5);
+		l.add(6);
+		
+		Iterator<Integer> S1 = new IteratorStack<Integer>(s);
+		Iterator<Integer> Q1 = new IteratorQueue<Integer>(q);
+		Iterator<Integer> L1 = new IteratorList<Integer>(l);
+		
+		Iterator<Integer> S2 = new IteratorStack<Integer>(s);
+		Iterator<Integer> Q2 = new IteratorQueue<Integer>(q);
+		Iterator<Integer> L2 = new IteratorList<Integer>(l);
+		
+		Iterator<Integer> S3 = new IteratorStack<Integer>(s);
+		Iterator<Integer> Q3 = new IteratorQueue<Integer>(q);
+		Iterator<Integer> L3 = new IteratorList<Integer>(l);
+		
+		IteratorOfIterators itit = new IteratorOfIterators();
+		itit.addIterator(S1);
+		itit.addIterator(Q1);
+		itit.addIterator(L1);
+		itit.addIterator(S2);
+		itit.addIterator(Q2);
+		itit.addIterator(L2);
+		itit.addIterator(S3);
+		itit.addIterator(Q3);
+		itit.addIterator(L3);
+
+		itit.generateIterator();
+		itit.iterateThrough();
+		
 		/*
 		DictionaryInterface<String, Integer> d = new Dictionary<String, Integer>();
 		d.add("First", 1);
