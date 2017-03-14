@@ -6,7 +6,7 @@ public final class StackVector<T> implements StackInterface<T>{
 
 	private Vector<T> v;
 	
-	private static final int MAX_SIZE = 10;
+	private static final int MAX_SIZE = 10000;
 	
 	public StackVector(){
 		v = new Vector<T>(0,1);
@@ -43,17 +43,11 @@ public final class StackVector<T> implements StackInterface<T>{
 
 	@SuppressWarnings("unchecked")
 	public T[] toArray() {
-		T[] temp = null;
-		
-		if (!isEmpty()){
-			
-			temp = (T[])new Object[v.size()]; 
-			for (int i = 0; i < v.size(); i++){
-				temp[i] = v.get(i);
-			}
-		}
-		
-		return temp;
+		return (T[])v.toArray();
+	}
+	
+	public boolean contains(T t){
+		return v.contains(t);
 	}
 
 	
